@@ -52,9 +52,14 @@
         </div>
       </div>
       <div class="hero-art hero-logo-motion" aria-hidden="true">
-        <video class="hero-logo-video" autoplay muted loop playsinline preload="metadata">
-          <source src="assets/nextgen-logo-hero.mp4" type="video/mp4">
-        </video>
+        <div class="hero-logo-pingpong" id="heroLogoPingPong">
+          <video class="hero-logo-video is-active" id="heroLogoForward" autoplay muted playsinline preload="auto">
+            <source src="assets/nextgen-logo-hero.mp4" type="video/mp4">
+          </video>
+          <video class="hero-logo-video" id="heroLogoReverse" muted playsinline preload="auto">
+            <source src="assets/nextgen-logo-hero-reverse.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </section>

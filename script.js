@@ -137,3 +137,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 4000);
 });
 
+
+
+/* V2.10: continuous forward/reverse hero animation at the asset's original speed. */
+document.addEventListener("DOMContentLoaded", () => {
+  const forward = document.getElementById("heroLogoForward");
+  const reverse = document.getElementById("heroLogoReverse");
+  if (!forward || !reverse) return;
+
+  let active = forward;
+  let standby = reverse;
+
+  const swap = () => {
+    standby.currentTime = 0;
+    standby.classList.add("is-active");
+    active.classList.remove("is-active");
+    const previous = active;
+    active = standby;
+    standby = previous;
+    const promise = active.play();
+    if (promise && typeof promise.catch === "function") promise.catch(() => {});
+  };
+
+  forward.addEventListener("ended", swap);
+  reverse.addEventListener("ended", swap);
+  forward.playbackRate = 1;
+  reverse.playbackRate = 1;
+  forward.play().catch(() => {});
+});

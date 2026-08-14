@@ -164,3 +164,27 @@ body.brand-intro-active{
 @media(max-width:560px){
   .hero-logo-video{width:100%}
 }
+
+/* V2.10: hero logo ping-pong loop. The official forward animation alternates
+   with a reversed copy, so there is no jump back to frame one. */
+.hero-logo-motion{overflow:hidden}
+.hero-logo-pingpong{
+  position:relative;
+  width:min(470px,100%);
+  aspect-ratio:1;
+  background:transparent;
+}
+.hero-logo-pingpong .hero-logo-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  opacity:0;
+  pointer-events:none;
+  mix-blend-mode:screen;
+}
+.hero-logo-pingpong .hero-logo-video.is-active{opacity:1}
+@media(max-width:900px){.hero-logo-pingpong{width:min(430px,90vw)}}
+@media(max-width:760px){.hero-logo-pingpong{width:min(86vw,390px)}}
+@media(max-width:560px){.hero-logo-pingpong{width:100%}}
