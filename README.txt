@@ -30,3 +30,7 @@ V2.3:
 - The website loads underneath it; the animation is decorative rather than a real loading screen.
 - Official ~5.1 s video plays at 3x speed and is capped at ~1.9 s.
 - Intro is skipped automatically for users with reduced-motion enabled.
+
+V2.4: Brand intro shortened to roughly 1.4 seconds (3.7x playback, 1.5 s hard cap).
+
+V2.5: Decorative brand intro shortened to 0.8 seconds (6.5x playback, 800 ms hard cap).
