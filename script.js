@@ -78,3 +78,46 @@ document.addEventListener("DOMContentLoaded",()=>{
     renderBusinessRoles();
   });
 });
+
+
+/* Decorative NextGen intro. It never waits for the site to load. */
+document.addEventListener("DOMContentLoaded", () => {
+  const intro = document.getElementById("brandIntro");
+  const video = document.getElementById("brandIntroVideo");
+  if (!intro || !video) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const alreadyShown = sessionStorage.getItem("nextgenBrandIntroShown") === "1";
+
+  if (reduceMotion || alreadyShown) {
+    intro.classList.add("is-skipped");
+    return;
+  }
+
+  sessionStorage.setItem("nextgenBrandIntroShown", "1");
+  document.body.classList.add("brand-intro-active");
+
+  // The supplied official clip is ~5.1 s. Play it faster so the intro remains decorative,
+  // not an artificial loading delay.
+  video.playbackRate = 3.0;
+
+  let dismissed = false;
+  const dismiss = () => {
+    if (dismissed) return;
+    dismissed = true;
+    intro.classList.add("is-hiding");
+    document.body.classList.remove("brand-intro-active");
+    window.setTimeout(() => intro.remove(), 420);
+  };
+
+  video.addEventListener("ended", dismiss, { once: true });
+  video.addEventListener("error", dismiss, { once: true });
+
+  const playPromise = video.play();
+  if (playPromise && typeof playPromise.catch === "function") {
+    playPromise.catch(dismiss);
+  }
+
+  // Fallback cap: never hold the visitor for more than ~1.9 s.
+  window.setTimeout(dismiss, 1900);
+});

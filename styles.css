@@ -8,3 +8,47 @@
 .field-intro{color:#657781;line-height:1.6;margin:0 0 16px}
 .day-picker,.quick-availability{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.day-picker button,.quick-availability button{border:1px solid #cbd6db;background:#f7f9f9;color:#315066;padding:10px 13px;border-radius:999px;cursor:pointer;transition:.18s}.day-picker button.active,.quick-availability button.active{background:#0f3b56;color:#fff;border-color:#0f3b56}
 .employer-hero .texture:after{background:linear-gradient(90deg,rgba(7,26,39,.99),rgba(7,26,39,.78) 58%,rgba(7,26,39,.25))}
+
+
+/* NextGen brand intro: decorative, first visit per browser tab/session only */
+.brand-intro{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:grid;
+  place-items:center;
+  background:#000;
+  opacity:1;
+  visibility:visible;
+  transition:opacity .38s ease, visibility .38s ease;
+}
+.brand-intro.is-hiding{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.brand-intro.is-skipped{
+  display:none;
+}
+.brand-intro__video{
+  width:min(72vw,560px);
+  height:min(72vw,560px);
+  max-width:560px;
+  max-height:560px;
+  object-fit:contain;
+  display:block;
+}
+body.brand-intro-active{
+  overflow:hidden;
+}
+@media (max-width:640px){
+  .brand-intro__video{
+    width:min(88vw,430px);
+    height:min(88vw,430px);
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .brand-intro{
+    display:none !important;
+  }
+}

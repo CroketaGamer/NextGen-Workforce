@@ -23,3 +23,10 @@ V2.1:
 - All candidate Apply CTAs now go directly to apply.html.
 - All employer staffing CTAs now go directly to work-with-us.html.
 - Employer form rebuilt with actual staffing-request details: industry, roles, worker count, timing, employment type, work location, detailed needs and final notes.
+
+V2.3:
+- Added the official client-supplied NextGen 3D logo animation as a brief branded intro.
+- Intro appears once per browser tab/session on the homepage only.
+- The website loads underneath it; the animation is decorative rather than a real loading screen.
+- Official ~5.1 s video plays at 3x speed and is capped at ~1.9 s.
+- Intro is skipped automatically for users with reduced-motion enabled.
