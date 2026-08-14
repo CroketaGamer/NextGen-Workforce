@@ -18,3 +18,8 @@ V2 additions:
 - Dedicated "Build up your team" company form matching the current site's required structure:
   company email, first name, last name, staff service, company name, phone number.
 - Homepage business CTA now routes to the dedicated employer form.
+
+V2.1:
+- All candidate Apply CTAs now go directly to apply.html.
+- All employer staffing CTAs now go directly to work-with-us.html.
+- Employer form rebuilt with actual staffing-request details: industry, roles, worker count, timing, employment type, work location, detailed needs and final notes.

@@ -23,17 +23,19 @@
   <div class="texture"></div>
   <div class="shell apply-hero-copy">
     <p class="kicker" data-i18n="business_kicker">Build up your team</p>
-    <h1 data-i18n="business_title">Tell us what your business needs.</h1>
-    <p data-i18n="business_intro">A cleaner version of NextGen’s existing company inquiry flow.</p>
+    <h1 data-i18n="business_title">Tell us exactly what your team needs.</h1>
+    <p data-i18n="business_intro">Share the role, quantity, timing and location so NextGen can understand your staffing request before following up.</p>
   </div>
 </section>
+
 <section class="form-section">
   <div class="shell form-grid">
     <div class="form-copy">
       <p class="eyebrow" data-i18n="business_label">For businesses</p>
-      <h2 data-i18n="business_heading">Let’s build the right team.</h2>
-      <p data-i18n="business_help">Share the essentials and NextGen can follow up about staffing needs, timing and next steps.</p>
+      <h2 data-i18n="business_heading">Request the right staff.</h2>
+      <p data-i18n="business_help">Give NextGen enough detail to understand the request before they call you back.</p>
     </div>
+
     <form id="businessForm" class="candidate-form" novalidate>
       <div class="form-block">
         <div class="form-block-title"><span>01</span><h3 data-i18n="company_info">Company information</h3></div>
@@ -46,27 +48,76 @@
           <label><span data-i18n="company_email">Company email</span><input type="email" name="companyEmail" required></label>
           <label><span data-i18n="phone">Phone number</span><input type="tel" name="phone" required></label>
         </div>
-      </div>
-      <div class="form-block">
-        <div class="form-block-title"><span>02</span><h3 data-i18n="staffing_needs">Staffing needs</h3></div>
-        <label><span data-i18n="staff_service">What staff service do you require?</span>
-          <select name="service" required>
+        <label><span data-i18n="industry">Industry</span>
+          <select name="industry">
             <option value="" data-i18n="select">Select</option>
-            <option>FOH (Front of House)</option>
-            <option>Culinary (BOH)</option>
-            <option>Administration & Office Support</option>
-            <option>Housekeeping Services</option>
-            <option>Automotive Technician</option>
             <option>Hospitality</option>
-            <option>Professional Painters</option>
+            <option>Food Service / Restaurant</option>
+            <option>Office / Administration</option>
+            <option>Automotive</option>
             <option>Property Management</option>
-            <option>LuxClean</option>
+            <option>Cleaning / Housekeeping</option>
+            <option>Construction / Painting</option>
             <option value="Other" data-i18n="other">Other</option>
           </select>
         </label>
-        <label><span data-i18n="business_notes">Tell us a little more about what you need</span><textarea name="notes" rows="5"></textarea></label>
+      </div>
+
+      <div class="form-block">
+        <div class="form-block-title"><span>02</span><h3 data-i18n="staffing_needs">Staffing needs</h3></div>
+
+        <label>
+          <span data-i18n="staff_service">What type of staff do you need?</span>
+          <div class="autocomplete-wrap">
+            <input id="businessRoleInput" autocomplete="off" placeholder="Type house, auto, front..." data-i18n-placeholder="role_ph">
+            <div id="businessRoleSuggestions" class="suggestions" hidden></div>
+          </div>
+        </label>
+        <div id="businessRoleChips" class="chips" aria-live="polite"></div>
+        <input type="hidden" id="businessRolesHidden" name="services">
+
+        <div class="field-row">
+          <label><span data-i18n="workers_needed">How many workers do you need?</span>
+            <input type="number" name="workerCount" min="1" step="1" placeholder="e.g. 4" required>
+          </label>
+          <label><span data-i18n="need_when">When do you need them?</span>
+            <select name="startTiming" required>
+              <option value="" data-i18n="select">Select</option>
+              <option value="Immediately" data-i18n="immediately">Immediately</option>
+              <option value="Within a week" data-i18n="within_week">Within a week</option>
+              <option value="Within a month" data-i18n="within_month">Within a month</option>
+              <option value="Planning ahead" data-i18n="planning_ahead">Planning ahead</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="field-row">
+          <label><span data-i18n="employment_type">Employment type</span>
+            <select name="employmentType">
+              <option value="" data-i18n="select">Select</option>
+              <option value="Temporary" data-i18n="temporary">Temporary</option>
+              <option value="Temp-to-hire" data-i18n="temp_hire">Temp-to-hire</option>
+              <option value="Direct hire" data-i18n="direct_hire">Direct hire</option>
+              <option value="Not sure" data-i18n="not_sure">Not sure</option>
+            </select>
+          </label>
+          <label><span data-i18n="work_location">Work location</span>
+            <input name="workLocation" placeholder="City, state or jobsite area" data-i18n-placeholder="work_location_ph" required>
+          </label>
+        </div>
+
+        <label><span data-i18n="business_notes">Tell us about your staffing needs</span>
+          <textarea name="notes" rows="6" placeholder="Example: We need 6 banquet servers for recurring weekend events..." data-i18n-placeholder="business_notes_ph" required></textarea>
+        </label>
+      </div>
+
+      <div class="form-block">
+        <div class="form-block-title"><span>03</span><h3 data-i18n="request_summary">Final details</h3></div>
+        <label><span data-i18n="additional_notes">Anything else NextGen should know?</span>
+          <textarea name="additionalNotes" rows="4"></textarea>
+        </label>
         <div class="submit-row">
-          <button class="btn btn-dark" type="submit" data-i18n="send_request">Send request</button>
+          <button class="btn btn-dark" type="submit" data-i18n="send_request">Send staffing request</button>
           <p id="businessStatus" aria-live="polite"></p>
         </div>
       </div>
