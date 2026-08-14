@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0e3a55">
+  <title>Build Your Team | NextGen Workforce</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="apply-page">
+<header class="apply-header">
+  <div class="shell nav">
+    <a class="logo" href="index.html"><img src="assets/logo-white.png" alt="NextGen Workforce"></a>
+    <div class="apply-nav">
+      <a href="index.html" data-i18n="back_home">Back to website</a>
+      <button class="lang-toggle" id="langToggle" type="button">ES</button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="apply-hero employer-hero">
+  <div class="texture"></div>
+  <div class="shell apply-hero-copy">
+    <p class="kicker" data-i18n="business_kicker">Build up your team</p>
+    <h1 data-i18n="business_title">Tell us what your business needs.</h1>
+    <p data-i18n="business_intro">A cleaner version of NextGen’s existing company inquiry flow.</p>
+  </div>
+</section>
+<section class="form-section">
+  <div class="shell form-grid">
+    <div class="form-copy">
+      <p class="eyebrow" data-i18n="business_label">For businesses</p>
+      <h2 data-i18n="business_heading">Let’s build the right team.</h2>
+      <p data-i18n="business_help">Share the essentials and NextGen can follow up about staffing needs, timing and next steps.</p>
+    </div>
+    <form id="businessForm" class="candidate-form" novalidate>
+      <div class="form-block">
+        <div class="form-block-title"><span>01</span><h3 data-i18n="company_info">Company information</h3></div>
+        <label><span data-i18n="company_name">Company name</span><input name="companyName" required></label>
+        <div class="field-row">
+          <label><span data-i18n="first">First name</span><input name="firstName" required></label>
+          <label><span data-i18n="last">Last name</span><input name="lastName" required></label>
+        </div>
+        <div class="field-row">
+          <label><span data-i18n="company_email">Company email</span><input type="email" name="companyEmail" required></label>
+          <label><span data-i18n="phone">Phone number</span><input type="tel" name="phone" required></label>
+        </div>
+      </div>
+      <div class="form-block">
+        <div class="form-block-title"><span>02</span><h3 data-i18n="staffing_needs">Staffing needs</h3></div>
+        <label><span data-i18n="staff_service">What staff service do you require?</span>
+          <select name="service" required>
+            <option value="" data-i18n="select">Select</option>
+            <option>FOH (Front of House)</option>
+            <option>Culinary (BOH)</option>
+            <option>Administration & Office Support</option>
+            <option>Housekeeping Services</option>
+            <option>Automotive Technician</option>
+            <option>Hospitality</option>
+            <option>Professional Painters</option>
+            <option>Property Management</option>
+            <option>LuxClean</option>
+            <option value="Other" data-i18n="other">Other</option>
+          </select>
+        </label>
+        <label><span data-i18n="business_notes">Tell us a little more about what you need</span><textarea name="notes" rows="5"></textarea></label>
+        <div class="submit-row">
+          <button class="btn btn-dark" type="submit" data-i18n="send_request">Send request</button>
+          <p id="businessStatus" aria-live="polite"></p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
