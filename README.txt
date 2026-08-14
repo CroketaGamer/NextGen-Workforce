@@ -45,3 +45,10 @@ V2.7:
 - The 0.5-second intro timer now starts on the video's real `playing` event.
 - sessionStorage is only marked after playback actually begins.
 - Added a 4-second safety fallback if media cannot start.
+
+V2.9:
+- Hero CTA copy remains “I'm looking for a job”.
+- Replaced the static white-background 3D logo card with the official rotating logo video.
+- Hero logo loops perpetually at the official animation's original speed.
+- Black video background is visually blended into the dark hero using CSS screen blending.
+- Loader behavior remains unchanged.
