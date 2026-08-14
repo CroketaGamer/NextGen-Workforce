@@ -34,3 +34,8 @@ V2.3:
 V2.4: Brand intro shortened to roughly 1.4 seconds (3.7x playback, 1.5 s hard cap).
 
 V2.5: Decorative brand intro shortened to 0.8 seconds (6.5x playback, 800 ms hard cap).
+
+V2.6:
+- Decorative intro shortened to 0.5 seconds.
+- Mobile pass: tighter spacing, larger touch targets, stacked CTAs, cleaner hero proportions,
+  one-column service/proof layouts, improved forms, better mobile typography and overflow handling.

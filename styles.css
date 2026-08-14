@@ -52,3 +52,89 @@ body.brand-intro-active{
     display:none !important;
   }
 }
+
+
+/* V2.6 mobile refinement */
+@media(max-width:760px){
+  body{overflow-x:hidden}
+  .shell{width:min(100% - 24px,var(--shell))}
+  .nav{height:76px}
+  .logo img{width:164px}
+  .menu-toggle{display:block}
+
+  .hero{padding:112px 0 72px;min-height:auto}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-copy{max-width:none}
+  .hero h1{font-size:clamp(3rem,14vw,4.45rem);line-height:.96}
+  .lede{font-size:1.02rem;line-height:1.55;margin:22px 0 26px}
+  .hero-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .hero-actions .btn{width:100%;min-height:48px}
+  .hero-art{justify-content:center}
+  .hero-art img{width:min(86vw,390px);border-radius:22px;transform:none}
+
+  .path-section{padding-bottom:58px}
+  .path-grid{grid-template-columns:1fr;gap:12px;transform:translateY(-26px)}
+  .path-card{min-height:310px;padding:24px;border-radius:22px}
+  .path-card h2{font-size:clamp(2.2rem,10.5vw,3.2rem)}
+
+  .section{padding:74px 0}
+  .statement-grid,.section-head,.why-grid,.proof-head,.contact-grid,.form-grid{grid-template-columns:1fr;gap:28px}
+  .statement h2,.services h2,.why h2,.proof h2,.process h2,.contact-band h2{font-size:clamp(2.3rem,10.5vw,3.45rem)}
+  .body-lg{font-size:1rem;line-height:1.62}
+
+  .service-grid{grid-template-columns:1fr}
+  .service-grid article{min-height:190px;padding:22px 20px}
+  .service-grid article>span{margin-bottom:48px}
+  .service-grid h3{font-size:1.12rem}
+
+  .proof-grid{grid-template-columns:1fr}
+  .proof-grid article{min-height:220px;padding:26px}
+  .proof-number{font-size:clamp(4rem,18vw,5.7rem)}
+
+  .why-title{position:static}
+  .pillars article{grid-template-columns:44px 1fr;gap:14px;padding:22px 0}
+
+  .process-wide{max-width:none}
+  .steps.horizontal{grid-template-columns:1fr}
+  .steps.horizontal li{padding:22px 0;border-right:0;border-bottom:1px solid var(--line);margin:0}
+  .steps.horizontal li:last-child{border-bottom:0}
+  .steps li>span{margin-bottom:26px}
+
+  .contact-band{padding:74px 0}
+  .contact-actions{width:100%}
+  .contact-actions>a:not(.btn){overflow-wrap:anywhere}
+  .contact-buttons{display:grid;grid-template-columns:1fr;width:100%}
+  .contact-buttons .btn{width:100%}
+
+  footer{padding:54px 0 28px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:8px}
+
+  .apply-hero{padding:120px 0 68px}
+  .apply-hero h1{font-size:clamp(2.9rem,13.5vw,4.2rem)}
+  .apply-hero-copy p:last-child{font-size:1rem;line-height:1.55}
+  .form-section{padding:54px 0 82px}
+  .form-copy{position:static}
+  .candidate-form{padding:20px 16px;border-radius:20px}
+  .field-row{grid-template-columns:1fr;gap:0}
+  .form-block{padding-bottom:22px;margin-bottom:22px}
+  .form-block-title{align-items:flex-start}
+  .candidate-form input,.candidate-form select,.candidate-form textarea{font-size:16px}
+  .day-picker,.quick-availability{gap:7px}
+  .day-picker button,.quick-availability button{flex:1 1 calc(50% - 7px);min-height:44px}
+  .suggestions{max-height:220px}
+  .submit-row{display:grid;grid-template-columns:1fr;gap:12px}
+  .submit-row .btn{width:100%;min-height:49px}
+  .apply-nav{gap:10px}
+  .apply-nav a{display:none}
+
+  .brand-intro__video{width:min(82vw,360px);height:min(82vw,360px)}
+}
+
+@media(max-width:430px){
+  .shell{width:min(100% - 18px,var(--shell))}
+  .hero h1{font-size:clamp(2.75rem,15vw,3.85rem)}
+  .path-card{min-height:290px}
+  .candidate-form{padding:18px 14px}
+  .day-picker button,.quick-availability button{flex-basis:100%}
+}

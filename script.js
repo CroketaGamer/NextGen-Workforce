@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // The supplied official clip is ~5.1 s. Play it faster so the intro remains decorative,
   // not an artificial loading delay.
-  video.playbackRate = 6.5;
+  video.playbackRate = 10.5;
 
   let dismissed = false;
   const dismiss = () => {
@@ -118,6 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
     playPromise.catch(dismiss);
   }
 
-  // Fallback cap: never hold the visitor for more than ~0.8 s.
-  window.setTimeout(dismiss, 800);
+  // Fallback cap: never hold the visitor for more than ~0.5 s.
+  window.setTimeout(dismiss, 500);
 });
