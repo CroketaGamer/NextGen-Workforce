@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 });
 
 
-/* Decorative NextGen intro. It never waits for the site to load. */
+/* Decorative NextGen intro. The 0.5s timer begins only after the video is actually playing. */
 document.addEventListener("DOMContentLoaded", () => {
   const intro = document.getElementById("brandIntro");
   const video = document.getElementById("brandIntroVideo");
@@ -94,22 +94,38 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  sessionStorage.setItem("nextgenBrandIntroShown", "1");
   document.body.classList.add("brand-intro-active");
 
-  // The supplied official clip is ~5.1 s. Play it faster so the intro remains decorative,
-  // not an artificial loading delay.
-  video.playbackRate = 10.5;
-
   let dismissed = false;
+  let visibleTimer = null;
+  let failsafeTimer = null;
+  let started = false;
+
   const dismiss = () => {
     if (dismissed) return;
     dismissed = true;
+    if (visibleTimer) clearTimeout(visibleTimer);
+    if (failsafeTimer) clearTimeout(failsafeTimer);
     intro.classList.add("is-hiding");
     document.body.classList.remove("brand-intro-active");
     window.setTimeout(() => intro.remove(), 420);
   };
 
+  const startVisibleWindow = () => {
+    if (started) return;
+    started = true;
+
+    // Only mark the intro as shown after playback really starts.
+    sessionStorage.setItem("nextgenBrandIntroShown", "1");
+
+    // Keep the official clip brief without altering the source file.
+    video.playbackRate = 10.5;
+
+    // Exactly 0.5 seconds of actual visible playback.
+    visibleTimer = window.setTimeout(dismiss, 500);
+  };
+
+  video.addEventListener("playing", startVisibleWindow, { once: true });
   video.addEventListener("ended", dismiss, { once: true });
   video.addEventListener("error", dismiss, { once: true });
 
@@ -118,6 +134,9 @@ document.addEventListener("DOMContentLoaded", () => {
     playPromise.catch(dismiss);
   }
 
-  // Fallback cap: never hold the visitor for more than ~0.5 s.
-  window.setTimeout(dismiss, 500);
+  // Safety net only: if the video never starts, don't block the site forever.
+  failsafeTimer = window.setTimeout(() => {
+    if (!started) dismiss();
+  }, 4000);
 });
+

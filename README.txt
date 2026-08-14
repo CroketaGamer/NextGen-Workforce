@@ -39,3 +39,9 @@ V2.6:
 - Decorative intro shortened to 0.5 seconds.
 - Mobile pass: tighter spacing, larger touch targets, stacked CTAs, cleaner hero proportions,
   one-column service/proof layouts, improved forms, better mobile typography and overflow handling.
+
+V2.7:
+- Fixed inconsistent logo intro playback on slower/mobile connections.
+- The 0.5-second intro timer now starts on the video's real `playing` event.
+- sessionStorage is only marked after playback actually begins.
+- Added a 4-second safety fallback if media cannot start.
