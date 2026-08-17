@@ -117,3 +117,10 @@ V3.8 FINAL POLISH:
 - Added a minimal scroll-progress accent to the staffing solutions area when the layout exposes a compatible grid.
 - Added reduced-motion accessibility support.
 - Preserved all V3.7 content, static Google reviews, forms, and existing structure.
+
+V3.9:
+- Fixed only the items previously marked ❌.
+- Candidate role search no longer uses the old FOH/Culinary-BOH/Hospitality/LuxClean architecture.
+- Employer role search uses the same new 8-category staffing structure and detailed positions.
+- Employer static service selector updated to the 8 current categories where applicable.
+- Main Our Staffing Solutions category headings now participate in EN/ES language switching.
