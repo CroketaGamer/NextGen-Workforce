@@ -188,3 +188,344 @@ body.brand-intro-active{
 @media(max-width:900px){.hero-logo-pingpong{width:min(430px,90vw)}}
 @media(max-width:760px){.hero-logo-pingpong{width:min(86vw,390px)}}
 @media(max-width:560px){.hero-logo-pingpong{width:100%}}
+
+/* NextGen Workforce V3 */
+.solutions-v3{background:radial-gradient(circle at 82% 18%,rgba(24,94,130,.34),transparent 32%),var(--navyDark)}
+.solutions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.solution-card{border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(255,255,255,.025);overflow:hidden;transition:.25s}
+.solution-card:hover,.solution-card[open]{background:rgba(16,59,86,.62);border-color:rgba(255,255,255,.28);transform:translateY(-2px)}
+.solution-card summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:44px 1fr 34px;gap:14px;align-items:start;padding:25px}
+.solution-card summary::-webkit-details-marker{display:none}.solution-num{font-family:GTE;color:#7894a4;font-size:.72rem;padding-top:5px}.solution-card h3{font-family:GTE;font-weight:400;font-size:1.2rem;line-height:1.25;margin:0}.solution-card summary p{color:#90a7b4;font-size:.78rem;margin:8px 0 0}.solution-plus{font-size:1.8rem;font-weight:300;line-height:1;color:#9fb3bf;transition:.25s}.solution-card[open] .solution-plus{transform:rotate(45deg)}.solution-card ul{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin:0;padding:0 25px 26px 83px;list-style:none;color:#c1d0d8;font-size:.86rem;line-height:1.4}.solution-card li:before{content:'↗';color:#6e9db7;margin-right:8px}.solutions-note{margin-top:26px;border-top:1px solid rgba(255,255,255,.15);padding-top:24px;display:grid;grid-template-columns:150px 1fr;gap:30px;color:#aebdc6;line-height:1.65}.solutions-note span{font-family:GTE;color:#fff;letter-spacing:.12em;font-size:.72rem}.solutions-note p{margin:0;max-width:780px}
+@media(max-width:760px){.solutions-grid{grid-template-columns:1fr}.solution-card summary{padding:21px 18px;grid-template-columns:34px 1fr 28px}.solution-card ul{grid-template-columns:1fr;padding:0 18px 22px 66px}.solutions-note{grid-template-columns:1fr;gap:10px}}
+
+
+/* V3.1 — live Google reviews */
+.reviews-v3{
+  background:
+    radial-gradient(circle at 12% 8%,rgba(48,109,142,.16),transparent 30%),
+    linear-gradient(180deg,#eef2f4 0%,#f8f9f9 100%);
+  overflow:hidden;
+}
+.reviews-head{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:70px;
+  align-items:end;
+  margin-bottom:48px;
+}
+.reviews-summary{
+  justify-self:end;
+  min-width:260px;
+  padding:22px 24px;
+  border:1px solid rgba(7,26,39,.12);
+  border-radius:20px;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(12px);
+}
+.reviews-rating-line{display:flex;align-items:center;gap:14px}
+.reviews-rating-line strong{
+  font-family:GTE,Aventa,sans-serif;
+  font-weight:400;
+  font-size:2.2rem;
+  letter-spacing:-.05em;
+}
+.stars{letter-spacing:.08em;font-size:.9rem;color:#b28b53}
+.reviews-summary p{margin:6px 0 14px;color:#687983;font-size:.9rem}
+.reviews-summary a{font-size:.86rem;font-weight:600;border-bottom:1px solid rgba(7,26,39,.45);padding-bottom:4px}
+.reviews-stage{position:relative;min-height:280px}
+.reviews-status{
+  min-height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  color:#72828b;
+  border:1px dashed rgba(7,26,39,.16);
+  border-radius:22px;
+  background:rgba(255,255,255,.45);
+}
+.reviews-status.is-error{color:#7d6a63}
+.reviews-pulse{
+  width:8px;height:8px;border-radius:50%;background:#477f9d;
+  box-shadow:0 0 0 0 rgba(71,127,157,.35);
+  animation:reviewPulse 1.6s infinite;
+}
+@keyframes reviewPulse{70%{box-shadow:0 0 0 10px rgba(71,127,157,0)}100%{box-shadow:0 0 0 0 rgba(71,127,157,0)}}
+.reviews-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.review-card{
+  position:relative;
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+  padding:26px;
+  border:1px solid rgba(7,26,39,.11);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 14px 45px rgba(7,26,39,.05);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 20px 55px rgba(7,26,39,.09)}
+.review-card__top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+.review-author{display:flex;align-items:center;gap:12px;min-width:0}
+.review-avatar{
+  width:40px;height:40px;border-radius:50%;object-fit:cover;background:#e7ecef;flex:none;
+}
+.review-avatar-fallback{
+  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  background:#dce6eb;color:#31566b;font-weight:600;flex:none;
+}
+.review-author a{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:175px}
+.review-meta{font-size:.75rem;color:#80909a;margin-top:3px}
+.review-stars{font-size:.78rem;letter-spacing:.06em;color:#b28b53;white-space:nowrap}
+.review-text{
+  color:#405765;
+  line-height:1.7;
+  font-size:.97rem;
+  margin:0 0 24px;
+  display:-webkit-box;
+  -webkit-line-clamp:7;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.review-card__footer{
+  margin-top:auto;
+  padding-top:18px;
+  border-top:1px solid rgba(7,26,39,.09);
+  display:flex;justify-content:space-between;gap:15px;align-items:center;
+  color:#72828b;font-size:.75rem;
+}
+.review-card__footer a{font-weight:600;color:#24495f}
+.reviews-source-note{margin:22px 0 0;color:#83919a;font-size:.76rem;line-height:1.5}
+@media(max-width:900px){
+  .reviews-head{grid-template-columns:1fr;gap:28px}
+  .reviews-summary{justify-self:start}
+  .reviews-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .reviews-grid{grid-template-columns:1fr}
+  .review-card{min-height:auto}
+  .reviews-summary{width:100%}
+}
+
+/* V3.3 — hero integration, sharper motion asset presentation, and mid-page rhythm */
+.hero{background:#071a27}
+.hero .texture{opacity:.54}
+.hero .texture:after{background:linear-gradient(90deg,rgba(7,26,39,.995) 0%,rgba(7,26,39,.92) 50%,rgba(7,26,39,.70) 100%)}
+.hero-art.hero-logo-motion{justify-content:center;overflow:visible}
+.hero-logo-pingpong{
+  width:min(540px,100%);
+  aspect-ratio:1;
+  border-radius:42px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 38px 100px rgba(0,0,0,.22);
+  -webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 54%,rgba(0,0,0,.94) 67%,transparent 100%);
+  mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 54%,rgba(0,0,0,.94) 67%,transparent 100%);
+}
+.hero-logo-pingpong .hero-logo-video{
+  width:100%;height:100%;object-fit:cover;mix-blend-mode:screen;
+  transform:scale(1.015) translateZ(0);
+  image-rendering:auto;
+  backface-visibility:hidden;
+}
+/* The source animation is 960px square. Never enlarge it beyond its useful desktop size. */
+@media(min-width:1200px){.hero-logo-pingpong{width:540px}}
+@media(max-width:900px){
+ .hero-logo-pingpong{width:min(520px,88vw);border-radius:34px}
+ .hero-grid{gap:38px}
+}
+@media(max-width:760px){
+ .hero-logo-pingpong{width:min(94vw,480px);margin:8px auto 0}
+ .hero-art.hero-logo-motion{width:100%}
+}
+
+/* Give the middle of the page a deliberate visual beat instead of another text/list block. */
+.operations-bridge{position:relative;overflow:hidden;background:#dfe8ed;padding:92px 0}
+.operations-bridge:before{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(16,59,86,.10);border-radius:50%;right:-170px;top:-310px}
+.operations-bridge-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:center}
+.operations-bridge-copy h2{font-size:clamp(2.8rem,5.2vw,5.2rem)}
+.operations-bridge-copy .body-lg{max-width:600px;margin-top:26px}
+.operations-map{position:relative;min-height:430px;border-radius:34px;background:#0a2435;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-content:center;gap:1px;padding:52px;box-shadow:0 28px 80px rgba(7,26,39,.14)}
+.operations-map:before{content:"NEXTGEN";position:absolute;inset:0;display:grid;place-items:center;font-family:GTE;font-size:clamp(4rem,8vw,8rem);letter-spacing:-.07em;color:rgba(255,255,255,.035);transform:rotate(-12deg)}
+.operations-map span{position:relative;z-index:2;padding:23px 20px;border-bottom:1px solid rgba(255,255,255,.13);font-family:GTE;font-size:.86rem;color:#d6e1e7}
+.operations-map span:nth-child(odd){border-right:1px solid rgba(255,255,255,.13)}
+.operations-map i{position:absolute;width:11px;height:11px;border-radius:50%;background:#fff;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 14px rgba(255,255,255,.05),0 0 0 38px rgba(255,255,255,.025)}
+.proof{background:#f4f6f7}
+@media(max-width:800px){.operations-bridge-grid{grid-template-columns:1fr;gap:42px}.operations-map{min-height:340px;padding:30px}.operations-bridge{padding:78px 0}}
+@media(max-width:520px){.operations-map{padding:22px}.operations-map span{padding:18px 10px;font-size:.72rem}}
+
+
+
+
+/* V3.6 — verified static Google reviews */
+.reviews-grid--static{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.review-card--static{
+  min-height:260px;
+}
+.review-text--static{
+  display:block;
+  overflow:visible;
+  -webkit-line-clamp:unset;
+}
+.review-card--static .review-author strong{
+  display:block;
+  font-weight:600;
+}
+@media(max-width:700px){
+  .reviews-grid--static{grid-template-columns:1fr}
+  .review-card--static{min-height:auto}
+}
+
+
+/* =========================================================
+   V3.8 FINAL POLISH — motion with restraint
+   ========================================================= */
+
+/* Reveal system */
+.reveal{
+  opacity:0;
+  transform:translateY(22px);
+  transition:
+    opacity .72s cubic-bezier(.22,1,.36,1),
+    transform .72s cubic-bezier(.22,1,.36,1);
+  transition-delay:var(--reveal-delay,0ms);
+  will-change:opacity,transform;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:none;
+}
+
+/* Sequential cards without turning the page into a carnival */
+.reviews-grid > *:nth-child(2),
+.solutions-grid > *:nth-child(2),
+.staffing-grid > *:nth-child(2){--reveal-delay:70ms}
+.reviews-grid > *:nth-child(3),
+.solutions-grid > *:nth-child(3),
+.staffing-grid > *:nth-child(3){--reveal-delay:140ms}
+.reviews-grid > *:nth-child(4),
+.solutions-grid > *:nth-child(4),
+.staffing-grid > *:nth-child(4){--reveal-delay:210ms}
+
+/* Cards: lift + restrained highlight */
+.review-card,
+.solution-card,
+.staffing-card,
+[class*="service-card"]{
+  position:relative;
+  overflow:hidden;
+  transition:
+    transform .32s cubic-bezier(.22,1,.36,1),
+    border-color .32s ease,
+    box-shadow .32s ease;
+}
+.review-card::after,
+.solution-card::after,
+.staffing-card::after,
+[class*="service-card"]::after{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  pointer-events:none;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),
+    rgba(255,255,255,.10), transparent 28%);
+  opacity:0;
+  transition:opacity .3s ease;
+}
+@media (hover:hover){
+  .review-card:hover,
+  .solution-card:hover,
+  .staffing-card:hover,
+  [class*="service-card"]:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 55px rgba(0,0,0,.16);
+  }
+  .review-card:hover::after,
+  .solution-card:hover::after,
+  .staffing-card:hover::after,
+  [class*="service-card"]:hover::after{opacity:1}
+}
+
+/* Buttons get a tiny directional response */
+a[class*="btn"],
+button[class*="btn"],
+.cta,
+.button{
+  transition:transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, opacity .25s ease;
+}
+@media (hover:hover){
+  a[class*="btn"]:hover,
+  button[class*="btn"]:hover,
+  .cta:hover,
+  .button:hover{
+    transform:translateY(-2px);
+  }
+  a[class*="btn"]:active,
+  button[class*="btn"]:active,
+  .cta:active,
+  .button:active{
+    transform:translateY(0) scale(.985);
+  }
+}
+
+/* Smooth accordion/details behavior where supported */
+details{
+  transition:background-color .3s ease, border-color .3s ease, transform .3s ease;
+}
+details[open]{transform:translateY(-2px)}
+details > summary{
+  transition:opacity .25s ease, padding-left .25s ease;
+}
+@media (hover:hover){
+  details > summary:hover{opacity:.78}
+}
+
+/* Decorative scroll rail for staffing area */
+.staffing-progress-rail{
+  width:100%;
+  height:2px;
+  background:rgba(255,255,255,.10);
+  overflow:hidden;
+  border-radius:999px;
+  margin:4px 0 28px;
+}
+.staffing-progress-rail__fill{
+  display:block;
+  width:var(--staffing-progress,0%);
+  height:100%;
+  background:linear-gradient(90deg,rgba(255,255,255,.32),rgba(255,255,255,.92));
+  border-radius:inherit;
+  transition:width .08s linear;
+}
+
+/* Gentle depth for large decorative media */
+.hero img,
+.hero video,
+[class*="hero"] img,
+[class*="hero"] video,
+[class*="logo"] video{
+  transform:translate3d(0,var(--parallax-y,0px),0);
+  transition:transform .08s linear;
+  will-change:transform;
+}
+
+/* Respect users who explicitly ask for less motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+  .reveal{opacity:1!important;transform:none!important}
+  .hero img,.hero video,[class*="hero"] img,[class*="hero"] video,[class*="logo"] video{
+    transform:none!important;
+  }
+}

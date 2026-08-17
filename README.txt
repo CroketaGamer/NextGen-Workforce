@@ -52,3 +52,68 @@ V2.9:
 - Hero logo loops perpetually at the official animation's original speed.
 - Black video background is visually blended into the dark hero using CSS screen blending.
 - Loader behavior remains unchanged.
+
+
+V3.1 — LIVE GOOGLE REVIEWS
+--------------------------
+The homepage now has a Google Reviews section connected through a Cloudflare Pages Function.
+
+How it updates:
+- Browser requests /api/google-reviews.
+- Cloudflare fetches current rating/reviews from Google Places.
+- Cloudflare caches the result for 6 hours to control API usage/cost.
+- After the cache expires, a later visitor causes a fresh Google fetch.
+- No review text is hard-coded, so new/changed reviews can appear automatically when Google returns them.
+
+ONE-TIME CLOUDFLARE SETUP REQUIRED:
+1. In Google Cloud, enable:
+   - Places API (New)
+2. Create an API key and restrict it appropriately.
+3. In Cloudflare Pages > NextGen project > Settings > Environment variables, add:
+   GOOGLE_PLACES_API_KEY = your Google key
+4. Optional but recommended:
+   GOOGLE_PLACE_ID = the exact Google Place ID for NextGen Workforce
+   OR
+   GOOGLE_PLACE_QUERY = a query that uniquely finds the listing, e.g. "NextGen Workforce 435-494-2395"
+5. Redeploy after adding variables.
+
+Important:
+- Google Places may return a selected subset of reviews rather than every review on the profile.
+- The UI preserves reviewer author attribution and links back to Google.
+- For full owner-level access to all Business Profile reviews, Google Business Profile API + OAuth is a different, more complex integration.
+
+V3.2:
+- Google Reviews display now prioritizes the strongest useful reviews returned by Google.
+- Ranking order: higher star rating, meaningful written detail, then newer publish time.
+- Shows up to 6 reviews when the API returns that many.
+- Review text, rating, author and links are never rewritten or fabricated.
+
+V3.4:
+- Removed the FOH + BOH explanatory block from the public homepage.
+- Removed the technical Google cache/update note from the public reviews UI.
+- Google Reviews section is now invisible until valid live Google data loads.
+- If Google Places is not configured or temporarily fails, the reviews section disappears silently instead of showing an error to visitors.
+- Google Reviews backend/function is preserved so it can be configured next without rebuilding the page.
+
+V3.5:
+- Restored the Google Reviews section so it is always part of the page.
+- If the live Google connection is not configured yet, the section stays visible with a clean non-technical placeholder.
+- Once Google Places is configured, the placeholder is automatically replaced by live review cards.
+
+V3.6:
+- Removed the Google Places API / Cloudflare Reviews dependency.
+- Added the 4 verified 5-star Google reviews supplied by the client/user as static website content.
+- Uses text + reviewer name only; no reviewer photos/screenshots.
+- Review wording is preserved from the supplied Google Maps screenshots and is not rewritten.
+- No Google billing/API key is required for this version.
+
+V3.7: Removed the visible total review count. The summary now says only “Google reviews” while retaining the 5.0 rating.
+
+V3.8 FINAL POLISH:
+- Added restrained scroll-reveal motion with staggered timing.
+- Added subtle hover lift and pointer-following highlights to cards on desktop.
+- Added button press/hover microinteractions.
+- Added gentle depth/parallax to hero/decorative media.
+- Added a minimal scroll-progress accent to the staffing solutions area when the layout exposes a compatible grid.
+- Added reduced-motion accessibility support.
+- Preserved all V3.7 content, static Google reviews, forms, and existing structure.
