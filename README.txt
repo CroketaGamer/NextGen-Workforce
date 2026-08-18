@@ -124,3 +124,11 @@ V3.9:
 - Employer role search uses the same new 8-category staffing structure and detailed positions.
 - Employer static service selector updated to the 8 current categories where applicable.
 - Main Our Staffing Solutions category headings now participate in EN/ES language switching.
+
+V3.10:
+- Google Reviews are now shown in English.
+- The supplied screenshots did not expose the exact original English wording for every review, so the site uses faithful English translations of the verified text provided.
+- Reviews now rotate automatically in a carousel.
+- Desktop shows 2 at a time; mobile shows 1 at a time.
+- Added previous/next controls, dots, swipe support, pause-on-hover/focus, and reduced-motion support.
+- Kept the 5.0 summary and changed the label to “Google Reviews” without exposing the total review count.

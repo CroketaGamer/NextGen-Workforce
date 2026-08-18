@@ -174,87 +174,97 @@
       <div class="reviews-head reveal">
         <div>
           <p class="eyebrow" data-i18n="reviews_label">What people say</p>
-          <h2 data-i18n="reviews_title">Real feedback.<br>From Google reviews.</h2>
+          <h2 data-i18n="reviews_title">Real feedback.<br>From Google Reviews.</h2>
         </div>
         <div class="reviews-summary">
           <div class="reviews-rating-line">
             <strong>5.0</strong>
             <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
           </div>
-          <p><span data-i18n="reviews_count_label">Google reviews</span></p>
+          <p><span data-i18n="reviews_count_label">Google Reviews</span></p>
         </div>
       </div>
 
-      <div class="reviews-grid reviews-grid--static reveal">
+      <div class="reviews-carousel reveal" id="reviewsCarousel" aria-roledescription="carousel" aria-label="Google Reviews">
+        <div class="reviews-carousel__viewport">
+          <div class="reviews-carousel__track" id="reviewsTrack">
 
-        <article class="review-card review-card--static">
-          <div class="review-card__top">
-            <div class="review-author">
-              <span class="review-avatar-fallback" aria-hidden="true">C</span>
-              <div>
-                <strong>César Veliz Dávila</strong>
-                <div class="review-meta">Google review · 5.0</div>
+          <article class="review-card review-card--carousel" tabindex="0">
+            <div class="review-card__top">
+              <div class="review-author">
+                <span class="review-avatar-fallback" aria-hidden="true">C</span>
+                <div>
+                  <strong>César Veliz Dávila</strong>
+                  <div class="review-meta">Google review · 5.0</div>
+                </div>
               </div>
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
             </div>
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          </div>
-          <p class="review-text review-text--static">La agencia es fantástica, me guiaron en cada paso y lograron que el proceso de búsqueda de empleo fuera mucho menos estresante. Se enfocaron en encontrar lo que mejor encajaba conmigo. ¡Muy agradecido con ellos!</p>
-          <div class="review-card__footer">
-            <span>Google</span>
-            <span>★★★★★</span>
-          </div>
-        </article>
-        <article class="review-card review-card--static">
-          <div class="review-card__top">
-            <div class="review-author">
-              <span class="review-avatar-fallback" aria-hidden="true">M</span>
-              <div>
-                <strong>Mervin Perez</strong>
-                <div class="review-meta">Google review · 5.0</div>
+            <p class="review-text review-text--carousel">The agency is fantastic. They guided me every step of the way and made the job search process much less stressful. They focused on finding what was the best fit for me. Very grateful to them!</p>
+            <div class="review-card__footer">
+              <span>Google</span>
+              <span>★★★★★</span>
+            </div>
+          </article>
+          <article class="review-card review-card--carousel" tabindex="0">
+            <div class="review-card__top">
+              <div class="review-author">
+                <span class="review-avatar-fallback" aria-hidden="true">M</span>
+                <div>
+                  <strong>Mervin Perez</strong>
+                  <div class="review-meta">Google review · 5.0</div>
+                </div>
               </div>
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
             </div>
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          </div>
-          <p class="review-text review-text--static">Exelente trabajo me Encanto la responsabilidad y la actitud De su trabajo por mi parte más q recomendados .sigan así</p>
-          <div class="review-card__footer">
-            <span>Google</span>
-            <span>★★★★★</span>
-          </div>
-        </article>
-        <article class="review-card review-card--static">
-          <div class="review-card__top">
-            <div class="review-author">
-              <span class="review-avatar-fallback" aria-hidden="true">O</span>
-              <div>
-                <strong>Oscar Eduardo Amaya alambarrio</strong>
-                <div class="review-meta">Google review · 5.0</div>
+            <p class="review-text review-text--carousel">Excellent work. I loved the responsibility and attitude they bring to their work. Highly recommended. Keep it up!</p>
+            <div class="review-card__footer">
+              <span>Google</span>
+              <span>★★★★★</span>
+            </div>
+          </article>
+          <article class="review-card review-card--carousel" tabindex="0">
+            <div class="review-card__top">
+              <div class="review-author">
+                <span class="review-avatar-fallback" aria-hidden="true">O</span>
+                <div>
+                  <strong>Oscar Eduardo Amaya alambarrio</strong>
+                  <div class="review-meta">Google review · 5.0</div>
+                </div>
               </div>
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
             </div>
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          </div>
-          <p class="review-text review-text--static">El servicio fue impecable. Siempre atentos a nuestras necesidades y proporcionando candidatos de alta calidad. Cubrimos las vacantes mucho más rápido de lo esperado. Sin duda, una agencia en la que confiamos.</p>
-          <div class="review-card__footer">
-            <span>Google</span>
-            <span>★★★★★</span>
-          </div>
-        </article>
-        <article class="review-card review-card--static">
-          <div class="review-card__top">
-            <div class="review-author">
-              <span class="review-avatar-fallback" aria-hidden="true">S</span>
-              <div>
-                <strong>Stefany Palmer</strong>
-                <div class="review-meta">Google review · 5.0</div>
+            <p class="review-text review-text--carousel">The service was impeccable. They were always attentive to our needs and provided high-quality candidates. We filled the vacancies much faster than expected. Without a doubt, an agency we trust.</p>
+            <div class="review-card__footer">
+              <span>Google</span>
+              <span>★★★★★</span>
+            </div>
+          </article>
+          <article class="review-card review-card--carousel" tabindex="0">
+            <div class="review-card__top">
+              <div class="review-author">
+                <span class="review-avatar-fallback" aria-hidden="true">S</span>
+                <div>
+                  <strong>Stefany Palmer</strong>
+                  <div class="review-meta">Google review · 5.0</div>
+                </div>
               </div>
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
             </div>
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="review-text review-text--carousel">Excellent service!</p>
+            <div class="review-card__footer">
+              <span>Google</span>
+              <span>★★★★★</span>
+            </div>
+          </article>
           </div>
-          <p class="review-text review-text--static">¡Excelente servicio!</p>
-          <div class="review-card__footer">
-            <span>Google</span>
-            <span>★★★★★</span>
-          </div>
-        </article>
+        </div>
+
+        <div class="reviews-carousel__controls">
+          <button class="reviews-carousel__arrow" id="reviewsPrev" type="button" aria-label="Previous review">←</button>
+          <div class="reviews-carousel__dots" id="reviewsDots" aria-label="Choose review"></div>
+          <button class="reviews-carousel__arrow" id="reviewsNext" type="button" aria-label="Next review">→</button>
+        </div>
       </div>
     </div>
   </section>
